@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Особистий кабінет - IT Support</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="dashboard.html" class="logo">🛠️ IT Support</a>
+        <div class="nav-links">
+            <a href="dashboard.html">Особистий кабінет</a>
+            <a href="#" id="logout-btn" style="color: #991b1b;">Вихід</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h2>Мої заявки на ремонт</h2>
+            <a href="create-request.html" class="btn">+ Створити заявку</a>
+        </div>
+
+        <!-- Фільтри та пошук -->
+        <div class="card" style="margin-bottom: 1.5rem; padding: 1rem 1.5rem;">
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <input type="text" id="search-input" class="form-control" placeholder="Пошук за назвою..." style="flex: 1; min-width: 200px;">
+                <select id="status-filter" class="form-control" style="width: 200px;">
+                    <option value="">Усі статуси</option>
+                    <option value="new">Нова</option>
+                    <option value="in_progress">У роботі</option>
+                    <option value="waiting">Очікування</option>
+                    <option value="completed">Завершена</option>
+                    <option value="rejected">Відхилена</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Таблиця заявок -->
+        <div class="card">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Дата</th>
+                            <th>Назва / Обладнання</th>
+                            <th>Проблема</th>
+                            <th>Статус</th>
+                            <th>Коментар адміна</th>
+                        </tr>
+                    </thead>
+                    <tbody id="requests-tbody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: var(--text-muted);">Завантаження заявок...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

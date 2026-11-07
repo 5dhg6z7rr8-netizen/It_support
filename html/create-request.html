@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Створити заявку - IT Support</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="dashboard.html" class="logo">🛠️ IT Support</a>
+        <div class="nav-links">
+            <a href="dashboard.html">Особистий кабінет</a>
+            <a href="#" id="logout-btn" style="color: #991b1b;">Вихід</a>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width: 700px;">
+        <div class="card">
+            <h2>Створити нову заявку на ремонт</h2>
+            
+            <div id="success-alert" class="alert alert-success">Заявку успішно створено!</div>
+            <div id="error-alert" class="alert alert-error"></div>
+
+            <form id="request-form">
+                <div class="form-group">
+                    <label for="title">Назва заявки (коротко суть проблеми)</label>
+                    <input type="text" id="title" class="form-control" required placeholder="Наприклад: Не вмикається системний блок">
+                </div>
+
+                <div class="form-group">
+                    <label for="equipment_type">Тип обладнання</label>
+                    <select id="equipment_type" class="form-control" required>
+                        <option value="">Оберіть тип...</option>
+                        <option value="Комп'ютер">Комп'ютер</option>
+                        <option value="Ноутбук">Ноутбук</option>
+                        <option value="Принтер">Принтер</option>
+                        <option value="Монітор">Монітор</option>
+                        <option value="Інше">Інше</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="inventory_number">Інвентарний номер (за наявності)</label>
+                    <input type="text" id="inventory_number" class="form-control" placeholder="INV-00000">
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Кабінет або місце розташування</label>
+                    <input type="text" id="location" class="form-control" required placeholder="Кабінет 304, Будівля А">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Опис проблеми</label>
+                    <textarea id="description" class="form-control" rows="4" required placeholder="Детально опишіть симптоми несправності..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-block">Надіслати заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/requests.js"></script>
+</body>
+</html>

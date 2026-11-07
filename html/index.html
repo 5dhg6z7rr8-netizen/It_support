@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід - IT Support</title>
+    <!-- Виходимо з папки html та заходимо в css -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <div class="container" style="max-width: 400px; margin-top: 5vh;">
+        <div class="card">
+            <h2>Вхід у систему</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.875rem;">IT Support — Облік заявок на ремонт</p>
+            
+            <div id="error-alert" class="alert alert-error"></div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Електронна пошта</label>
+                    <input type="email" id="email" class="form-control" required placeholder="name@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" class="form-control" required placeholder="••••••••">
+                </div>
+
+                <button type="submit" class="btn btn-block">Увійти</button>
+            </form>
+
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.875rem;">
+                Ще немає акаунта? <a href="register.html" style="color: var(--primary);">Зареєструватися</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Підключення Supabase та скриптів -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

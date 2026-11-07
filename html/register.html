@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація - IT Support</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <div class="container" style="max-width: 450px; margin-top: 5vh;">
+        <div class="card">
+            <h2>Реєстрація акаунта</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.875rem;">Створіть профіль для подачі заявок на ремонт</p>
+            
+            <div id="error-alert" class="alert alert-error"></div>
+            <div id="success-alert" class="alert alert-success" role="status" aria-live="polite"></div>
+
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="full_name">Ім'я та прізвище</label>
+                    <input type="text" id="full_name" class="form-control" required placeholder="Іван Петренко">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Електронна пошта</label>
+                    <input type="email" id="email" class="form-control" required placeholder="name@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" class="form-control" required placeholder="••••••••">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Підтвердження пароля</label>
+                    <input type="password" id="confirm-password" class="form-control" required placeholder="••••••••">
+                </div>
+
+                <button type="submit" class="btn btn-block">Зареєструватися</button>
+            </form>
+
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.875rem;">
+                Вже є акаунт? <a href="index.html" style="color: var(--primary);">Увійти</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

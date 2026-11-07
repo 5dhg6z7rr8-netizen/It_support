@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель менеджера - IT Support</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="manager.html" class="logo">🛠️ IT Support [Manager]</a>
+        <div class="nav-links">
+            <a href="manager.html" class="active">Контроль заявок</a>
+            <a href="#" id="logout-btn" style="color: #991b1b;">Вихід</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Панель менеджера / Звіти</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Контроль стану виконання ремонтів та термінів.</p>
+
+        <div class="card">
+            <h3>Моніторинг виконання</h3>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Дата</th>
+                            <th>Заявник</th>
+                            <th>Обладнання / Кабінет</th>
+                            <th>Пріоритет</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody id="manager-requests-tbody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: var(--text-muted);">Завантаження даних...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/manager.js"></script>
+</body>
+</html>

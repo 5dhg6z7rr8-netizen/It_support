@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель адміністратора - IT Support</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="admin.html" class="logo">🛠️ IT Support [Admin]</a>
+        <div class="nav-links">
+            <a href="admin.html" class="active">Керування заявками</a>
+            <a href="#" id="logout-btn" style="color: #991b1b;">Вихід</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Панель системного адміністратора</h2>
+
+        <!-- Статистика -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+            <div class="card" style="padding: 1.25rem; text-align: center;">
+                <h3 id="stat-new" style="color: var(--primary); font-size: 2rem; margin-bottom: 0;">0</h3>
+                <p style="color: var(--text-muted); font-size: 0.875rem;">Нові заявки</p>
+            </div>
+            <div class="card" style="padding: 1.25rem; text-align: center;">
+                <h3 id="stat-progress" style="color: #d97706; font-size: 2rem; margin-bottom: 0;">0</h3>
+                <p style="color: var(--text-muted); font-size: 0.875rem;">В роботі</p>
+            </div>
+            <div class="card" style="padding: 1.25rem; text-align: center;">
+                <h3 id="stat-completed" style="color: #166534; font-size: 2rem; margin-bottom: 0;">0</h3>
+                <p style="color: var(--text-muted); font-size: 0.875rem;">Завершені</p>
+            </div>
+        </div>
+
+        <!-- Таблиця всіх заявок -->
+        <div class="card">
+            <h3>Усі заявки системи</h3>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Дата</th>
+                            <th>Заявник</th>
+                            <th>Обладнання</th>
+                            <th>Проблема</th>
+                            <th>Пріоритет</th>
+                            <th>Статус</th>
+                            <th>Дії</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-requests-tbody">
+                        <tr>
+                            <td colspan="8" style="text-align: center; color: var(--text-muted);">Завантаження даних...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
